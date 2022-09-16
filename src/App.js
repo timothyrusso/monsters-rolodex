@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       name: 'Tim',
       company: 'ZTL',
+      surname: 'Pauls',
     };
   }
 
@@ -21,7 +22,7 @@ class App extends Component {
             Hi {this.state.name}, I work n the {this.state.company} company.
           </p>
           <button onClick={() => {
-            this. setState({ name: 'Pippo', company: 'Google' })
+            this. setState({ name: 'Pippo', company: 'Google', surname: 'James' })
             console.log(this.state.name)
             }}>Change name</button>
         </header>
