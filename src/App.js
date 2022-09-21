@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 
@@ -20,7 +19,7 @@ class App extends Component {
             return { monsters: users };
           },
           () => {
-            console.log(this.setState);
+            console.log(this.state);
           }
         )
       );
@@ -30,14 +29,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi {this.state.name}, I work n the {this.state.company} company.
-          </p>
-          <button onClick={() => {
-            this. setState({ name: 'Pippo', company: 'Google', surname: 'James' })
-            console.log(this.state.name)
-            }}>Change name</button>
+        {this.state.monsters.map((element) => {
+          return <h1 key={element.id}>{element.name}</h1>
+        })}
         </header>
       </div>
     );
