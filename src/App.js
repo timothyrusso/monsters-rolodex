@@ -9,7 +9,7 @@ class App extends Component {
       monsters: [],
     };
 
-    console.log('1')
+    console.log('constructor')
   }
 
   componentDidMount() {
@@ -25,18 +25,21 @@ class App extends Component {
           }
         )
       );
-    console.log('3')
+    console.log('componentDidMount')
   }
 
   render() {
-    console.log('2')
+    console.log('render')
     return (
       <div className="App">
-        <header className="App-header">
+        <input className='search-box' type='search' placeholder='search monsters' />
         {this.state.monsters.map((element) => {
-          return <h1 key={element.id}>{element.name}</h1>
+          return (
+            <div key={element.id}>
+              <h1>{element.name}</h1>
+            </div>
+          )
         })}
-        </header>
       </div>
     );
   }
