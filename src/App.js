@@ -8,6 +8,8 @@ class App extends Component {
     this.state = {
       monsters: [],
     };
+
+    console.log('1')
   }
 
   componentDidMount() {
@@ -23,9 +25,11 @@ class App extends Component {
           }
         )
       );
+    console.log('3')
   }
 
   render() {
+    console.log('2')
     return (
       <div className="App">
         <header className="App-header">
