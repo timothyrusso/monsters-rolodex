@@ -1,5 +1,6 @@
 import './App.css';
 import { Component } from 'react';
+import CardList from './components/card-list/card-list.component';
 
 class App extends Component {
   constructor() {
@@ -9,8 +10,6 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-
-    console.log('constructor');
   }
 
   componentDidMount() {
@@ -20,13 +19,9 @@ class App extends Component {
         this.setState(
           () => {
             return { monsters: users };
-          },
-          () => {
-            console.log(this.state);
           }
         )
       );
-    console.log('componentDidMount');
   }
 
   onSearchChange = (event) => {
@@ -37,8 +32,6 @@ class App extends Component {
   };
 
   render() {
-    console.log('render');
-
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
@@ -54,13 +47,7 @@ class App extends Component {
           placeholder="search monsters"
           onChange={onSearchChange}
         />
-        {filteredMonsters.map((element) => {
-          return (
-            <div key={element.id}>
-              <h1>{element.name}</h1>
-            </div>
-          );
-        })}
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
